@@ -18,6 +18,6 @@ Given(/^I am on Home page$/) do
   visit "/"
 end
 
-Then 'I click "Outgoing Mail" link' do
-  click_link('Outgoing Mail')
+Then(/^I click "(.*?)" link$/) do |text|
+  click_link(text)
 end

@@ -12,3 +12,8 @@ Scenario: Visiting Home and Outgoing Mail page
   And I should see "Outgoing Mail" link
   Then I click "Outgoing Mail" link
   And I should see "Outgoing Mails List"
+  And I should see "Back" link
+  Then I click "Back" link
+  Then I should see "Home" header
+  And I should see "Welcome to Dodi home page."
+  And I should see "Outgoing Mail" link
