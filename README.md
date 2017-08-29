@@ -1,3 +1,7 @@
+[![Stories in Ready](https://badge.waffle.io/fybwid/dodi.svg?label=ready&title=Ready)](http://waffle.io/fybwid/dodi)
+[![Build Status](https://semaphoreci.com/api/v1/fybwid/dodi/branches/master/badge.svg)](https://semaphoreci.com/fybwid/dodi)
+
+
 # dodi
 Dokumentasi Digital
 
@@ -61,4 +65,10 @@ bundle exec rake db:setup
 bundle exec rake db:migrate RAILS_ENV=test  
 bundle exec rake spec
 xvfb-run -a bundle exec cucumber
+```
+
+## Heroku
+Get API key
+```
+https://dashboard.heroku.com/account
 ```
