@@ -1,24 +1,64 @@
-# README
+# dodi
+Dokumentasi Digital
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby
+Version 2.4.0
+> `rvm --default use 2.4.0`
 
-Things you may want to cover:
+## Bundler
+```
+gem install bundler
+```
 
-* Ruby version
+## Rails
+Version 5.1.3
 
-* System dependencies
+## PostgreSQL
+Version 9.3
 
-* Configuration
+### Change conf files to map your user to postgres user
+```
+sudo sed -i 's/local[ ]*all[ ]*postgres[ ]*peer/local all postgres peer map=basic/' /etc/postgresql/9.3/main/pg_hba.conf
+sudo sed -i "$ a\basic $USER postgres" /etc/postgresql/9.3/main/pg_ident.conf
+```
 
-* Database creation
+### Start the service
+```
+sudo service postgresql start
+```
 
-* Database initialization
+### Make the default database template encoded in unicode
+```
+psql -U postgres -c "update pg_database set encoding = 6, datcollate = 'C', datctype = 'C' where datname = 'template1';"
+sudo /etc/init.d/postgresql restart
+```
 
-* How to run the test suite
+## X virtual frame buffer
+```
+sudo apt-get install xvfb
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Qt Webkit
+Istall
+```
+sudo apt-get install qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
+```
 
-* Deployment instructions
+## Install Gems
+```
+bundle install
+```
 
-* ...
+## Set up and import database
+```
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rake db:setup
+```
+
+## Run the test
+```
+bundle exec rake db:migrate RAILS_ENV=test  
+bundle exec rake spec
+xvfb-run -a bundle exec cucumber
+```
