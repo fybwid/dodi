@@ -1,16 +1,14 @@
-Feature: Home
-  In order to read the page
+Feature: Home page
+  In order to read the Home page
   As a viewer
   I want to see the home page of my app
-  
-  Background:
-    Given I am on the homepage
+  also navigating to Outgoing Mail
+  and back to Home page
 
-	Scenario: Check Home content
-  	Then I should see "Dodi"
-   	And I should see "Welcome to Dodi home page."
-
-  Scenario: Navigate to Outgoing Mail
-    Then I should see "Outgoing Mails List" link
-    When I click "Outgoing Mail" link
-    Then I should see "Outgoing Mails List"
+Scenario: Visiting Home and Outgoing Mail page
+  Given I am visiting Home page
+  Then I should see "Home" header
+  And I should see "Welcome to Dodi home page."
+  And I should see "Outgoing Mail" link
+  Then I click "Outgoing Mail" link
+  And I should see "Outgoing Mails List"
