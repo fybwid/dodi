@@ -5,4 +5,5 @@ Feature: Welcome
 
 	Scenario: View home page
   		Given I am on the home page
-  		Then I should see "Welcome to Dodi home page."
+  		Then I should see "Dodi"
+   		And I should see "Welcome to Dodi home page."
