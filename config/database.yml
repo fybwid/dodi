@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: dodi_production
-  username: dodi
+  username: ubuntu
   password: <%= ENV['DODI_DATABASE_PASSWORD'] %>
