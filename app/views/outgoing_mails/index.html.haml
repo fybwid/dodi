@@ -1,5 +1,5 @@
 %p#notice= notice
-%h1 Outgoing Mails
+%h1 Outgoing Mails List
 %table
   %thead
     %tr
@@ -12,3 +12,4 @@
         %td= link_to 'Destroy', outgoing_mail, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Outgoing Mail', new_outgoing_mail_path
+= link_to 'Back to Home', home_index_path
