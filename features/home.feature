@@ -1,4 +1,4 @@
-Feature: Welcome
+Feature: Home
   In order to read the page
   As a viewer
   I want to see the home page of my app
