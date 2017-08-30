@@ -1,0 +1,8 @@
+class CreateIncomingMails < ActiveRecord::Migration[5.1]
+  def change
+    create_table :incoming_mails do |t|
+
+      t.timestamps
+    end
+  end
+end
