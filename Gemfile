@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Add gems HERE
 gem 'haml'
+gem 'bundler', '1.15.4'
+ruby '2.3.4'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
