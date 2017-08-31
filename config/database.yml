@@ -81,7 +81,7 @@ test: &test
 production:
   <<: *default
   database: dodi_production
-  username: ubuntu
+  username: dodi-app
   password: <%= ENV['DODI_DATABASE_PASSWORD'] %>
 
 cucumber:
