@@ -6,12 +6,10 @@ services:
 before_install: gem install bundler
 before_script:
 - sh -e /etc/init.d/xvfb start
-- psql -c "CREATE DATABASE dodi_production;" -U postgres
-- psql -c "CREATE DATABASE dodi_test;" -U postgres
-- psql -c "CREATE DATABASE dodi_development;" -U postgres
 - cp config/database.travis.yml config/database.yml
+- bundle exec rake db:setup
 - export PARALLEL_TEST_PROCESSORS=4
-- rake db:reset:setup
+
 deploy:
   provider: heroku
   api_key:
