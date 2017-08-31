@@ -2,23 +2,20 @@ language: ruby
 rvm:
 - 2.4.0
 services:
-  - postgresql
-  
+- postgresql
 before_install: gem install bundler
-
 before_script:
-  - "sh -e /etc/init.d/xvfb start"
-  - psql -c "CREATE DATABASE dodi_production;" -U postgres
-  - psql -c "CREATE DATABASE dodi_test;" -U postgres
-  - psql -c "CREATE DATABASE dodi_development;" -U postgres
-  - cp config/database.travis.yml config/database.yml
-  - export PARALLEL_TEST_PROCESSORS=4
-  - RAILS_ENV=development bundle exec rake db:create db:migrate
-
+- sh -e /etc/init.d/xvfb start
+- psql -c "CREATE DATABASE dodi_production;" -U postgres
+- psql -c "CREATE DATABASE dodi_test;" -U postgres
+- psql -c "CREATE DATABASE dodi_development;" -U postgres
+- cp config/database.travis.yml config/database.yml
+- export PARALLEL_TEST_PROCESSORS=4
+- RAILS_ENV=development bundle exec rake db:create db:migrate
 deploy:
   provider: heroku
   api_key:
-    secure: "FR2HUa9Lj8QnFi5rZUAsr0bwVgjF+ztGCasOSGALqwz7qSBGhhRKEeq4xXiII2OJkCyAlVDGfa5udlBpN+coXvNXRKI/V36NSRQB7qiqE+lWnqPP2El+gFAZuE1uJYFX2dNFckSWoSNesil6Nqh4E74kSx/H/BaAcH5FA1bh70uZs6w8J+7sQeLGIgjnmCTN247IeXwv3UA5JZuyMTpVlnLlAb+tKRALgCcUg1oZYBRDRyvfb+Za1wKFVsTorMwMgjXWkvXZE4olXzVjaUl4VtXqLBLCGXQRkYkoMy4O3bgcjQcKfc+yh2libxTz7MSFnOpr7FwZ9SdJ+ojh4mAU9TatK1uvJpiVOikIjIRfY8X9P9V/fGX0y+lxHC7HH3z0z7FBazO5YOf2jMrjgpNXM84wkzjfvm54tWEU17Sr3YZeRdRrMAo/Lf84+yqkCIcM1Yp2E7znS+0wxhkYTUOWqZqgvvR7dYeIsTeczoPBaj4TmroRQzeXTXiIO0bnyMzFsc7haMlwW+oMzLJGineIaqLIFHEnGwPmHQfymE4NOfsQJplJmsZ8CBw3y2tzh1hqZLflxKPNLqZdt5VRzVtmSvNc6NTrwuSuMRWW+af/L1Nwiwqln0QLMfnqAFcW9u72JPXxxxGoYxWlJJ7TNCnQOxiXVz+P6rksyPHi0SIs4VI="
-  app: dodi-app
+    secure: CBawMleH3bHWdEzUYwsWrjNfUf9QZt5SFoD4gyilekFmlF9J12rKNkelokPyIoPMIT96X5kGKO7UdwgRuS9kxEUTvjV9n5hl2jPn9gHxms73gyi8z7VP6HnFg4pk7amY8IVCi1JmsTE/42bTynqcR+VYJjfnBmuV+UCch1t9KwNNicQrj4SOS0NQbUqwnQX5LVqFrpo1NL6t80NWx32pJ1LY8eJybJAv5m7hOdRq/av7/z67wGMcYZAF3qMib6pWQ6Ck/8dwzd6Rwh7xCWFDFZakhzFIqJz+NKYoQLlqpepUHN9u7HrcTILaQQlEDTpVJ31uUWvR3iGlghBNNYX1uVFUcU0Ut1yC4bEa+Z3FnVmCUtHCWbXfKtu8ZoIntTqnMs4WbbhzCdHHYYLYm99eudNK/R6dMniWcLAHMAxnO6+/U0ATUKJwBbRM67dz8NDBg+511K7LM4ZTApz75o1ytzu3pC+J0mupW90T1RT8PfuwcSAqVFgNcG4BBaDv5fXF4mK8lmf2CLwkU3QkWIoEeUha7/fUNmm1wWRdjXrsXyr2cEMEjsWdrvyIZ4LyWyPEKZb+9m53BMIOCTj8a2s9u17E7Xv1dUPwSzdyd66n4aNLF5vcISXavSXUmMhMgw0fbsshFiL3qTd3NyHwvzTb15j/0yJXizuO8u/LyOi96xk=
+  app: dodi
   on:
     repo: fybwid/dodi
