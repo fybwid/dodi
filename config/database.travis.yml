@@ -1,6 +1,6 @@
 postgresql: &postgresql
   adapter: postgresql
-  username: ubuntu
+  username: postgres
   password:
   database: dodi
   min_messages: ERROR
