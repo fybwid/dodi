@@ -1,14 +1,3 @@
-\%p#notice= notice
-\%h1 Outgoing Mails
-\%table
-\%thead
-\%tr
-\%th{:colspan =&gt; "3"}
-\%tbody
-\- @outgoing_mails.each do |outgoing_mail|
-\%tr
-\%td= link_to 'Show', outgoing_mail
-\%td= link_to 'Edit', edit_outgoing_mail_path(outgoing_mail)
-\%td= link_to 'Destroy', outgoing_mail, method: :delete, data: { confirm: 'Are you sure?' }
-\%br/
-\= link_to 'New Outgoing Mail', new_outgoing_mail_path
+%h1 New Outgoing Mail
+= render 'form', outgoing_mail: @outgoing_mail
+= link_to 'Back', outgoing_mails_path
