@@ -11,7 +11,7 @@ before_script:
 - psql -c "CREATE DATABASE dodi_development;" -U postgres
 - cp config/database.travis.yml config/database.yml
 - export PARALLEL_TEST_PROCESSORS=4
-- rails db:reset:setup
+- rake db:reset:setup
 deploy:
   provider: heroku
   api_key:
