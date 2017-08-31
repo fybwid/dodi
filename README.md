@@ -6,8 +6,8 @@
 Dokumentasi Digital
 
 ## Ruby
-Version 2.4.0
-> `rvm --default use 2.4.0`
+Version 2.3.4
+> `rvm --default use 2.3.4`
 
 ## Bundler
 ```
@@ -63,12 +63,19 @@ bundle exec rake db:setup
 ## Run the test
 ```
 bundle exec rake db:migrate RAILS_ENV=test  
-bundle exec rake spec
+bundle exec rake
 xvfb-run -a bundle exec cucumber
 ```
 
 ## Heroku
-Get API key
+> Get API key
+
 ```
 https://dashboard.heroku.com/account
+```
+
+> Migrate
+
+```
+heroku run rake db:migrate --app YOUR-APP-NAME
 ```
