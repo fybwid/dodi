@@ -1,6 +1,7 @@
 [![Stories in Ready](https://badge.waffle.io/fybwid/dodi.svg?label=ready&title=Ready)](http://waffle.io/fybwid/dodi)
 [![Build Status](https://semaphoreci.com/api/v1/fybwid/dodi/branches/master/badge.svg)](https://semaphoreci.com/fybwid/dodi)
 [![Build Status](https://travis-ci.org/fybwid/dodi.svg?branch=master)](https://travis-ci.org/fybwid/dodi)
+[![Coverage Status](https://coveralls.io/repos/github/fybwid/dodi/badge.svg?branch=master)](https://coveralls.io/github/fybwid/dodi?branch=master)
 
 # dodi
 Dokumentasi Digital
