@@ -36,6 +36,7 @@ gem 'bundler', '1.15.4'
 ruby '2.3.4'
 gem 'coveralls', require: false
 gem 'devise'
+gem 'toastr-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
