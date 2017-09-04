@@ -17,7 +17,7 @@ class OutgoingMailsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create outgoing_mail" do
     assert_difference('OutgoingMail.count') do
-      post outgoing_mails_url, params: { outgoing_mail: {  } }
+      post outgoing_mails_url, params: { outgoing_mail: { title: 'Outgoing Mail Test', description: 'Test for Outgoing Mail Description' } }
     end
 
     assert_redirected_to outgoing_mail_url(OutgoingMail.last)
@@ -34,7 +34,7 @@ class OutgoingMailsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update outgoing_mail" do
-    patch outgoing_mail_url(@outgoing_mail), params: { outgoing_mail: {  } }
+    patch outgoing_mail_url(@outgoing_mail), params: { outgoing_mail: { title: 'Outgoing Mail Test Update', description: 'Test for Updating Outgoing Mail Description' } }
     assert_redirected_to outgoing_mail_url(@outgoing_mail)
   end
 
