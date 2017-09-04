@@ -21,3 +21,7 @@ end
 Then(/^I click "(.*?)" link$/) do |text|
   click_link(text)
 end
+
+And(/^I press "(.*?)" button/) do |text|
+  click_button(text)
+end

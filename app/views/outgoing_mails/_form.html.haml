@@ -1,11 +1,20 @@
-= form_with(model: outgoing_mail, local: true) do |form|
-  - if outgoing_mail.errors.any?
+= form_for :outgoing_mail, url: outgoing_mails_path do |f|
+  - if @outgoing_mail.errors.any?
     #error_explanation
       %h2
-        = pluralize(outgoing_mail.errors.count, "error")
-        prohibited this outgoing_mail from being saved:
+        = pluralize(@outgoing_mail.errors.count, "error")
+        prohibited
+        this article from being saved:
       %ul
-        - outgoing_mail.errors.full_messages.each do |message|
-          %li= message
-  .actions
-    = form.submit
+        - @outgoing_mail.errors.full_messages.each do |msg|
+          %li= msg
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title, size: "60"
+  %p
+    = f.label :description
+    %br/
+    = f.text_area :description, size: "60x12" 
+  %p
+    = f.submit
