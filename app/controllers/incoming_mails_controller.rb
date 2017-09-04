@@ -10,6 +10,7 @@ class IncomingMailsController < ApplicationController
   # GET /incoming_mails/1
   # GET /incoming_mails/1.json
   def show
+    @incoming_mail = IncomingMail.find(params[:id])
   end
 
   # GET /incoming_mails/new
@@ -70,5 +71,6 @@ class IncomingMailsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def incoming_mail_params
       params.fetch(:incoming_mail, {})
+      params.require(:incoming_mail).permit(:title, :description)
     end
 end
