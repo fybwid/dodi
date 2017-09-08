@@ -1,4 +1,15 @@
 %h1 Home
 %p Welcome to Dodi home page.
-= link_to 'Outgoing Mail', outgoing_mails_path
-= link_to 'Incoming Mail', incoming_mails_path
+
+- if current_user.nil?
+  = link_to new_user_session_path, class: 'button' do
+    Sign in
+  = link_to new_user_registration_path, class: 'button' do
+    Sign up
+- else
+  = link_to outgoing_mails_path, class: 'button' do
+    Outgoing Mail
+  = link_to incoming_mails_path, class: 'button' do
+    Incoming Mail
+  = link_to destroy_user_session_path, :method => :delete, class: 'button' do
+    Sign out
