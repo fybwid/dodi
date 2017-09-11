@@ -15,14 +15,6 @@ Scenario: Visiting Outgoing Mail and Home page
   And I should see "Back to Home" link
 
 Scenario: Create and view Outgoing Mail
-  Given I am visiting Outgoing Mail page
-  Then I click "New Outgoing Mail" link
-  And I should see "New Outgoing Mail" header
-  And I should see "Title"
-  And I should see "Description"
-  Then I fill the title with Outgoing Mail Title
-  Then I fill the description with Outgoing Mail Description
-  And I press "Save Outgoing mail" button
-  Then I should see "Outgoing mail was successfully created."
-  And I should see "Edit" link
-  And I should see "Back" link
+  Given I am visiting Outgoing Mail page as registered user and Log in
+  Then I am at Outgoing Mail page
+  Then I am creating New Outgoing Mail
