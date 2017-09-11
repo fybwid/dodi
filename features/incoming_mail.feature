@@ -13,10 +13,7 @@ Scenario: Visiting Incoming Mail and Log in
   Then I should see "Outgoing Mail" link
   Then I should see "Incoming Mail" link
 
-Scenario: Create and view Incoming Mail
-  Given I am visiting Incoming Mail page as registered user and Log in
-  Then I should see "Signed in successfully."
-  Then I should see "Incoming Mails List"
-  Then I should see "New Incoming Mail"
-  Then I should see "Back to Home"
+Scenario: Creating New Incoming Mail page
+  Given I am creating New Incoming Mail
+  Then I clicked "New Incoming Mail" link
   Given I am creating New Incoming Mail page

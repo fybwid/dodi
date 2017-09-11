@@ -36,7 +36,15 @@ Given(/^I am on Home page$/) do
 end
 
 Then(/^I click "(.*?)" link$/) do |text|
-  click_link text
+  click_link(text)
+end
+
+Then(/^I clicked "(.*?)" link$/) do |text|
+  click_link(text)
+end
+
+Then(/^I debug "(.*?)" link$/) do |text|
+  save_and_open_page
 end
 
 And(/^I press "(.*?)" button$/) do |text|

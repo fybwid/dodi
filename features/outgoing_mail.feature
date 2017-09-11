@@ -16,8 +16,5 @@ Scenario: Visiting Outgoing Mail and Home page
 
 Scenario: Create and view Outgoing Mail
   Given I am visiting Outgoing Mail page as registered user and Log in
-  Then I should see "Signed in successfully."
-  Then I should see "Incoming Mails List"
-  Then I should see "New Incoming Mail"
-  Then I should see "Back to Home"
+  Then I am at Outgoing Mail page
   Then I am creating New Outgoing Mail

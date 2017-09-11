@@ -1,4 +1,4 @@
-Given(/^I am visiting Outgoing Mail page$/) do
+Given(/^I am at Outgoing Mail page$/) do
   visit outgoing_mails_path
   puts "I am on Outgoing Mails page"
 end
