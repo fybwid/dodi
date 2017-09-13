@@ -3,6 +3,11 @@ Given(/^I am at Outgoing Mail page$/) do
   puts "I am on Outgoing Mails page"
 end
 
+Given(/^I am visiting Outgoing Mail page$/) do
+  visit outgoing_mails_path
+  puts "I am on Outgoing Mails page"
+end
+
 Given(/^I am visiting Outgoing Mail page as registered user and Log in$/) do
   visit outgoing_mails_path
   puts "I am on Outgoing Mails page"
