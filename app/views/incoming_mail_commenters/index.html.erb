@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Incoming Mail Commenters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Commenter</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @incoming_mail_commenters.each do |incoming_mail_commenter| %>
+      <tr>
+        <td><%= incoming_mail_commenter.commenter %></td>
+        <td><%= incoming_mail_commenter.body %></td>
+        <td><%= link_to 'Show', incoming_mail_commenter %></td>
+        <td><%= link_to 'Edit', edit_incoming_mail_commenter_path(incoming_mail_commenter) %></td>
+        <td><%= link_to 'Destroy', incoming_mail_commenter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Incoming Mail Commenter', new_incoming_mail_commenter_path %>
