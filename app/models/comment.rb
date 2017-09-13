@@ -1,3 +1,3 @@
 class Comment < ApplicationRecord
-  belongs_to :outgoing_mail, :incoming_mail
+  belongs_to :commentable, :polymorphic => true
 end
