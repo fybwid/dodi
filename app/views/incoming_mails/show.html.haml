@@ -1,4 +1,26 @@
 %p#notice= notice
+
+%p
+  %strong Title:
+  = @incoming_mail.title
+%p
+  %strong Text:
+  = @incoming_mail.description
+  
+%h2 Add a comment:
+= form_with(model: [ @incoming_mail, @incoming_mail.comments.build ], local: true) do |form|
+  %p
+    = form.label :commenter
+    %br/
+    = form.text_field :commenter
+  %p
+    = form.label :body
+    %br/
+    = form.text_area :body
+  %p
+    = form.submit
+
+
 = link_to 'Edit', edit_incoming_mail_path(@incoming_mail)
 |
 = link_to 'Back', incoming_mails_path

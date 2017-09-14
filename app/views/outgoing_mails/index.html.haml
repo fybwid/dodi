@@ -1,15 +1,17 @@
 %p#notice= notice
 %h1 Outgoing Mails List
 %table
-  %thead
+  %tr
+    %th Title
+    %th Description
+    %th{:colspan => "3"}
+  - @outgoing_mails.each do |outgoing_mail|
     %tr
-      %th{:colspan => "3"}
-  %tbody
-    - @outgoing_mails.each do |outgoing_mail|
-      %tr
-        %td= link_to 'Show', outgoing_mail
-        %td= link_to 'Edit', edit_outgoing_mail_path(outgoing_mail)
-        %td= link_to 'Destroy', outgoing_mail, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= outgoing_mail.title
+      %td= outgoing_mail.description
+      %td= link_to 'Show', outgoing_mail
+      %td= link_to 'Edit', edit_outgoing_mail_path(outgoing_mail)
+      %td= link_to 'Destroy', outgoing_mail, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Outgoing Mail', new_outgoing_mail_path
 = link_to 'Back to Home', root_path
