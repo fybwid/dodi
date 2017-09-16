@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :incoming_mail_commenters
   devise_for :users
   resources :incoming_mails do
     resources :comments

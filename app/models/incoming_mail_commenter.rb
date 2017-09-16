@@ -1,2 +1,0 @@
-class IncomingMailCommenter < ApplicationRecord
-end
