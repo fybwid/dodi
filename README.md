@@ -4,6 +4,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/fybwid/dodi/badge.svg?branch=master)](https://coveralls.io/github/fybwid/dodi?branch=master)
 
 # dodi
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/fybwid/dodi.svg)](https://greenkeeper.io/)
 Dokumentasi Digital
 
 ## Ruby
